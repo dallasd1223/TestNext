@@ -5,6 +5,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: '2025-02-24.acacia'
 })
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+
 export async function POST(req: Request) {
     const { items } = await req.json()
 
@@ -13,8 +15,8 @@ export async function POST(req: Request) {
             payment_method_types: ['card'],
             mode: 'payment',
             line_items: items,
-            success_url: 'http://localhost:3000/success',
-            cancel_url: 'http://localhost:3000/cancel',
+            success_url: `${baseUrl}/success`,
+            cancel_url: `${baseUrl}/cancel`,
         })
 
         return NextResponse.json({ id: session.id })
