@@ -30,5 +30,5 @@ export default function CheckoutButton() {
 
     }
 
-    return <button className='bg-blue-500 border-2 rounded-lg p-4 border-solid cursor-pointer' onClick={handleClick}>BUY NOW</button>
+    return <button className='bg-blue-500 border-2 rounded-lg p-4 border-solid cursor-pointer color-transition' onClick={handleClick}>BUY NOW</button>
 }

@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@keyframes colorChange {
+  0% { background-color: #ff0000; }  /* red */
+  16% { background-color: #ff7f00; } /* orange */
+  32% { background-color: #ffff00; } /* yellow */
+  48% { background-color: #00ff00; } /* green */
+  64% { background-color: #0000ff; } /* blue */
+  80% { background-color: #4b0082; } /* indigo */
+  96% { background-color: #8f00ff; } /* violet */
+  100% { background-color: #ff0000; } /* back to red */
+}
+
+.color-transition {
+  animation: colorChange 8s infinite;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
